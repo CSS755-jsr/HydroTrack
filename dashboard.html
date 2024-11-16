@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Monitoring Dashboard</title>
+    <link rel="stylesheet" href="dash_style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Water Monitoring Dashboard</h1>
+    </header>
+
+    <!-- Menu Bar -->
+    <div class="menu-bar">
+        <!-- Hamburger Menu (Top Left) -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger icon -->
+        </div>
+
+        <!-- Profile Picture (Top Right) -->
+        <div class="profile-pic" onclick="toggleProfile()">
+            <img src="profile-pic.jpg" alt="Profile" id="profile-pic-img" onclick="showSection('profile')">
+        </div>
+    </div>
+
+    <!-- Hamburger Menu Items (Hidden initially) -->
+    <div id="hamburger-menu-items" class="hamburger-menu-items" style="display:none;">
+        <button onclick="window.location.href='alerts.html'">Alerts</button>
+        <button onclick="window.location.href='profile.html'">Profile</button>
+        <button onclick="window.location.href='settings.html'">Settings</button> <!-- Example for another section -->
+    </div>
+
+    <!-- Alerts Section -->
+    <div id="alerts-section" class="dashboard-section" style="display:none;">
+        <h3>Alerts</h3>
+        <p>Water level alert notifications will be displayed here.</p>
+    </div>
+
+    <!-- Settings Section (example) -->
+    <div id="settings-section" class="dashboard-section" style="display:none;">
+        <h3>Settings</h3>
+        <p>Settings options will be displayed here.</p>
+    </div>
+
+    <!-- Profile Area (Initially hidden) -->
+    <div id="profile-area" class="profile-area" style="display:none;">
+        <div class="profile-content">
+            <img src="profile-pic.jpg" alt="Profile" class="profile-img">
+            <p>Name: John Doe</p>
+            <p>Email: john.doe@example.com</p>
+            <button onclick="window.location.href='edit-profile.html'">Edit Profile</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Real-time Water Level Section -->
+        <section class="water-level">
+            <h2>Real-time Water Level</h2>
+            <div class="water-level-graph">
+                <!-- Graphical representation of water level -->
+                <canvas id="waterLevelChart"></canvas>
+            </div>
+            <div class="indicator">
+                <p id="levelStatus">Status: <span class="green">Sufficient</span></p>
+            </div>
+        </section>
+
+        <!-- Usage Statistics Section -->
+        <section class="usage-stats">
+            <h2>Water Usage Statistics</h2>
+            <div class="charts">
+                <!-- Placeholder for charts -->
+                <canvas id="usageChart"></canvas>
+            </div>
+            <p id="estimatedDaysRemaining">Estimated Days Remaining: 10 days</p>
+        </section>
+
+        <!-- Water Quality Information Section -->
+        <section class="water-quality">
+            <h2>Water Quality</h2>
+            <p id="waterQualityStatus">Potable: Yes</p>
+        </section>
+
+        <!-- Tank Management Section -->
+        <section class="tank-management">
+            <h2>Tank Management</h2>
+            <label for="tankSelector">Select Tank:</label>
+            <select id="tankSelector">
+                <option value="tank1">Tank 1</option>
+                <option value="tank2">Tank 2</option>
+                <!-- More tanks can be added here -->
+            </select>
+        </section>
+
+        <!-- Alerts and Notifications Section -->
+        <section class="alerts">
+            <div id="alertCard" class="alert-card">
+                <p>Water level is low!</p>
+                <button onclick="bookTanker()">Book Tanker</button>
+                <button onclick="dismissAlert()">Dismiss</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="dash_script.js"></script>
+</body>
+
+</html>
