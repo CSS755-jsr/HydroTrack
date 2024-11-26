@@ -1,0 +1,91 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+}
+
+.dashboard-container {
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+/* Virtual Tank Styles */
+.water-level-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.virtual-tank {
+    position: relative;
+    width: 150px;
+    height: 300px;
+    border: 3px solid #3498db;
+    border-radius: 10px;
+    background: #ecf5fc;
+    overflow: hidden;
+}
+
+.water-level {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75%; /* Initial Level */
+    background: #3498db;
+    animation: water-animation 2s ease-out;
+}
+
+.water-level-text {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Water Quality Styles */
+.water-quality-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.quality-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.quality-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Dates Section Styles */
+.dates-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Animations */
+@keyframes water-animation {
+    from {
+        height: 0;
+    }
+    to {
+        height: 75%; /* Match the initial water level */
+    }
+}

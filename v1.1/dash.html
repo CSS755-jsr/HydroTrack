@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydroTrack Dashboard</title>
+    <link rel="stylesheet" href="dash_style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Top Section: Virtual Tank -->
+        <div class="water-level-container">
+            <div class="virtual-tank">
+                <div class="water-level" id="water-level"></div>
+            </div>
+            <div class="water-level-text" id="water-level-text">75% Full</div>
+        </div>
+
+        <!-- Middle Section: Water Quality -->
+        <div class="water-quality-container">
+            <div class="quality-icon" id="quality-icon">😊</div>
+            <div class="quality-text" id="quality-text">Excellent Quality</div>
+        </div>
+
+        <!-- Bottom Section: Dates -->
+        <div class="dates-container">
+            <div class="last-fill-date" id="last-fill-date">Last Filled: 23rd Nov 2024, 10:00 AM</div>
+            <div class="estimated-runout-date" id="estimated-runout-date">Estimated Run-Out: 28th Nov 2024</div>
+        </div>
+    </div>
+
+    <script src="dash_script.js"></script>
+</body>
+</html>
